@@ -1,0 +1,24 @@
+megs: 32                    # Amount of memory for the virtual machine
+display_library: sdl2
+romimage: file=/usr/local/share/bochs/BIOS-bochs-latest   # Path to the Bochs BIOS
+vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest # Path to the VGA BIOS
+
+ata0-master: type=cdrom, path="kernel.iso", status=inserted
+boot: cdrom
+
+# log: bochs.log              # Bochs log file
+
+# Enable debugging
+# debug: true
+# debug: page
+# debug: memory
+
+cpu: count=1, ips=10000000  # Single CPU with specified instructions/sec
+
+# keyboard: auto      # Use the host's keyboard layout
+mouse: enabled=0            # Disable mouse emulation
+plugin_ctrl: speaker=0
+
+# Enable debugging
+magic_break: enabled=1      # Magic breakpoints with `xchg bx, bx`
+# debug_flags: page           # Enable page-related debugging information
